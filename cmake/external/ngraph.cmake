@@ -62,6 +62,7 @@ if (MSVC)
             COMMAND git apply --ignore-space-change --ignore-whitespace ${PROJECT_SOURCE_DIR}/patches/ngraph/ngraph_fix_memory.patch
             CMAKE_ARGS
                 -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                -DNGRAPH_USE_LEGACY_MKLDNN=FALSE
                 -DNGRAPH_DEX_ONLY=ON
                 -DNGRAPH_USE_SYSTEM_PROTOBUF=FALSE
                 -DNGRAPH_ONNX_IMPORT_ENABLE=TRUE
@@ -89,6 +90,7 @@ else()
             COMMAND git apply --ignore-space-change --ignore-whitespace ${PROJECT_SOURCE_DIR}/patches/ngraph/ngraph_protobuf.patch
             CMAKE_ARGS
                 -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                -DNGRAPH_USE_LEGACY_MKLDNN=FALSE
                 -DNGRAPH_USE_PREBUILT_LLVM=TRUE
                 -DNGRAPH_USE_SYSTEM_PROTOBUF=FALSE
                 -DNGRAPH_ONNX_IMPORT_ENABLE=TRUE
